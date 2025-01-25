@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Modern Color Palette */
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #818cf8;
+    --success: #22c55e;
+    --warning: #facc15;
+    --danger: #ef4444;
+    --background: #fafafa;
+    --surface: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border: #e2e8f0;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow: 0 4px 6px rgba(0,0,0,0.07);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: var(--spacing-xl) var(--spacing-md);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
+    transform: skewY(-5deg);
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    margin: -50px auto 0;
+    padding: 0 var(--spacing-md);
+    position: relative;
+}
+
+/* Add Form */
+.add-form {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.input-group {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+input {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99,102,241,0.1);
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Bucket List */
+.bucket-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.list-item {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out;
+}
+
+.list-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.checkbox.checked {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.checkbox i {
+    color: white;
+    font-size: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s ease;
+}
+
+.checkbox.checked i {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.item-content {
+    flex: 1;
+}
+
+.item-text {
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.checked .item-text {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+.item-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.item-actions button {
+    background: none;
+    padding: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.item-actions button:hover {
+    background: rgba(99,102,241,0.1);
+    color: var(--primary);
+    transform: none;
+    box-shadow: none;
+}
+
+.star-btn.active {
+    color: var(--warning) !important;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xl);
+}
+
+.progress {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    height: 6px;
+    background: var(--border);
+    border-radius: 999px;
+    margin: var(--spacing-sm) 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    width: 0;
+    border-radius: 999px;
+    transition: width 0.5s ease;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        margin-top: -30px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .list-item {
+        padding: var(--spacing-sm);
+    }
+
+    .item-text {
+        font-size: 1rem;
+    }
+}

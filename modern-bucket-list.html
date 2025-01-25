@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Bucket List</title>
+    <!-- Remix Icons for modern, aesthetic icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>My Bucket List</h1>
+            <p>Transform your dreams into reality</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="add-form">
+            <div class="input-group">
+                <input type="text" id="newItem" placeholder="What's on your bucket list?">
+                <button id="addBtn">
+                    <i class="ri-add-line"></i>
+                    Add Dream
+                </button>
+            </div>
+        </div>
+
+        <ul id="bucketList" class="bucket-list">
+            <!-- List items will be added here by JavaScript -->
+        </ul>
+    </main>
+
+    <footer>
+        <div class="progress">
+            <p id="progressText">0 of 0 dreams achieved</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
